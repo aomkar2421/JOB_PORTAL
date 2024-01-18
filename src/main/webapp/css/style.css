@@ -1,0 +1,79 @@
+@charset "ISO-8859-1";
+
+@font-face {
+    font-family: abc;
+    src: url("Fonts/BlackAcute.ttf");
+}
+
+html{
+	padding: 0px;
+	margin: 0px;
+}
+
+.col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12{
+	padding: 10px 60px;
+}
+
+.header-bg{
+    background: linear-gradient(to bottom, #000099 0%, #6699ff 100%);
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.logot{
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+}
+
+.hlinks{
+	list-style: none;
+	text-decoration: none;
+	color: white;
+}
+
+.menu-bar{
+	    background: linear-gradient(to bottom, #ffffff 40%, #99ccff 100%);
+	    height: 50px;
+}
+
+.nav-bar{
+	list-style: none;
+}
+
+.nav-bar li{
+	float: left;
+	margin-left:40px ;
+}
+
+.tf-design{
+	padding: 5px 10px;
+}
+
+.tf-design:hover{
+	background-color:#f2f2f2 ;
+}
+
+#abcde{
+   text-align: center;
+   box-shadow: 0 0 3px #F00, 0 0 5px #00F;
+   margin-top: 20px;
+}
+
+.job-display{
+	border: 2px solid black;
+}
+
+.footer-menu ul{
+	list-style: none;
+}
+
+.black{
+	background-color: black;
+	color: white;
+}
+
+
+
+
