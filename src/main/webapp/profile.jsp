@@ -17,6 +17,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	</head>
 	<body>
+	
 		<%
 		String name= (String) session.getAttribute("sname");
 		String email= (String) session.getAttribute("semail");
