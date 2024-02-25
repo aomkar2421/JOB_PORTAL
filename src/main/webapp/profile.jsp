@@ -165,7 +165,7 @@
 						<a href="">Upload Resume</a>
 					</div>
 					<div class="col-md-12">
-						<a href="">Build Resume</a>
+						<a href="resumebuilder.jsp">Build Resume</a>
 					</div>
 				</div>
 			</div>
