@@ -69,7 +69,7 @@
 			<div class="col-md-6 reg">
 				<form method="post" name="regform" onsubmit="return validation()">  <!-- <form action="reg" method="post"> -->
 					<br> <br>
-				<h2>Register</h2> <br> <br>
+				<h2>Register</h2> <br> 
 				<input type="text" placeholder="Enter Name..." name="name1" class="reg-tf"> <br> <br>
 				<input type="text" placeholder="Enter Email..." name=email1 class="reg-tf"> <br> <br>
 				<input type="password" placeholder="Enter Password..." name="pass1" class="reg-tf"> <br> <br>

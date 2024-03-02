@@ -8,7 +8,8 @@
     pageEncoding="ISO-8859-1"%>
     
     <%
-    	String email=(String) session.getAttribute("semail");
+	String email=(String) session.getAttribute("semail");
+	String oemail=(String) session.getAttribute("oemail");
     %>
     
 <!DOCTYPE html>
@@ -29,13 +30,7 @@
 	
 		<div class="container-fluid">
 		
-			<%
-				if(email==null || email=="" || email.equals("")){
-				%> <jsp:include page="header.jsp"></jsp:include> <%	
-				}else{
-				%> <jsp:include page="profileheader.jsp"></jsp:include> <%	
-				}
-			%>
+			<jsp:include page="profileheader.jsp"></jsp:include>
 		
 			<jsp:include page="menubar.jsp"></jsp:include>
 			

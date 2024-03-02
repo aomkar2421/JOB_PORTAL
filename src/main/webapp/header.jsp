@@ -10,12 +10,29 @@
 </head>
 <body>
 			<div class="row header-bg" >
-				<div class="col-md-9 logo">
+				<div class="col-md-7 logo">
 						<a href="index.jsp"><img alt="" src="images/ao.png" style="height: 35px"><span class="logot">Job Hub</span></a>
 						
 				</div>
-				<div class="col-md-3">
-						<a href="login.jsp" class="hlinks">Login</a> / <a href="register.jsp" class="hlinks">Register</a>
+				<div class="col-md-5">
+						<div class="btn-group">
+						  <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    Employee
+						  </button>
+						  <div class="dropdown-menu">
+						    <a class="dropdown-item" href="register.jsp">Register</a>
+    						<a class="dropdown-item" href="login.jsp">Login</a>
+						  </div>
+						</div>
+						<div class="btn-group">
+						  <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    Organization
+						  </button>
+						  <div class="dropdown-menu">	   
+						    <a class="dropdown-item" href="registercompany.jsp">Register</a>
+    						<a class="dropdown-item" href="logincompany.jsp">Login</a>
+						  </div>
+						</div>
 				</div>
 			</div>
 </body>
