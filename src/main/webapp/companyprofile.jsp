@@ -54,18 +54,41 @@
 		String email= (String) session.getAttribute("oemail");
 		String pass= (String) session.getAttribute("opass");
 		String city= (String) session.getAttribute("ocity");
-		String profile= (String) session.getAttribute("profile");		
-		%>
+		String profile= (String) session.getAttribute("profile");
+		String industry="",website="",specialities="",empno="",about="",id="";
 
+		%>
 		
 		
 		<jsp:include page="profileheader.jsp"></jsp:include>
 		<jsp:include page="companymenubar.jsp"></jsp:include>
 		
+		
 		<!-- ============about section========= -->
 		<div class="row">
 			<div class="col-md-2">
 			</div>
+			
+			  <%
+					Connection con;
+					try {
+												
+						con=DriverManager.getConnection("jdbc:mysql://localhost:3306/jobportal", "root", "root");
+						PreparedStatement ptst=con.prepareStatement("select * from about_company where email=?");
+						ptst.setString(1, email);
+						ResultSet rs=ptst.executeQuery();
+						
+						while(rs.next()){
+							industry= rs.getString("industry");
+							website= rs.getString("website");
+							specialities= rs.getString("specialities");
+							empno= rs.getString("empno");
+							about= rs.getString("about");
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				%>	
 			
 			<div class="col-md-8">
 				<div class="row" style="border: 1px solid gray; border-radius: 3px;box-shadow: 2px 2px 8px black; ">
@@ -74,17 +97,16 @@
 						<img alt="" src="images/company.png" height="100px">
 					</div>
 					<div class="col-md-8">
-						<h1 style="font-family: abcd" ><%=name %></h1> <br> <br>
-						<span class="ohed">Website</span> : <span class="osh"><a href="#">www.accenture.com</a></span> <br>
-						<span class="ohed">Industry</span> : <span class="osh">Business Consulting and Services</span> <br>
-						<span class="ohed">Company size</span> : <span class="osh">10,001+ employees</span> <br>
-						<span class="ohed">Specialties</span> : <span class="osh">Management Consulting, Systems Integration and Technology, Business Process Outsourcing, and Application and Infrastructure Outsourcing</span>
+						<h1 style="font-family: abcd" ><%=name %> <a href="edit-companyabout.jsp"><span class="glyphicon glyphicon-pencil" style="font-size: 15px; margin-left: 5px"></span></a></h4></h1> <br> <br>
+						<span class="ohed">Website</span> : <span class="osh"> <%=website %> </span> <br>
+						<span class="ohed">Industry</span> : <span class="osh"> <%=industry %> </span> <br>
+						<span class="ohed">Company size</span> : <span class="osh"> <%=empno %> </span> <br>
+						<span class="ohed">Specialties</span> : <span class="osh"> <%=specialities %> </span>
 						
 					</div>
 					<div class="about" style="margin:20px;">
 						<div class="ohed" >About</div>
-						<div class="osh">Accenture is a global professional services company with leading capabilities in digital, cloud, and security. Combining unmatched experience and specialized skills across more than 40 industries, we offer Strategy and Consulting, Technology and Operations Services, and Accenture Song—all powered by the world’s largest network of Advanced Technology and Intelligent Operations centers. 
-					</div>
+						<div class="osh"> <%=about %> </div>
 					</div>
 				</div>
 			</div>

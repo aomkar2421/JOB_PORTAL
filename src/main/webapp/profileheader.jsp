@@ -78,7 +78,7 @@
 									
 							</div>
 							<div class="col-md-5">
-									<div class="btn-group">
+									<div class="btn-group" style="margin-right: 10px;">
 									  <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									    Employee
 									  </button>

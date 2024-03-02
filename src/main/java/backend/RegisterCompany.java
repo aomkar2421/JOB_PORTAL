@@ -40,13 +40,12 @@ public class RegisterCompany extends HttpServlet {
 			int a1= ptst.executeUpdate();
 			System.out.println("ENTER DATA");
 
-//			PreparedStatement ps2=con.prepareStatement("insert into about_user(email,title,skills) values(?,?,?)");
-//			ps2.setString(1, oemail2);
-//			ps2.setString(2, "");
-//			ps2.setString(3, "");
-//			int a2=ps2.executeUpdate();
+			PreparedStatement ps2=con.prepareStatement("insert into about_company(oemail,oname) values(?,?)");
+			ps2.setString(1, oemail2);
+			ps2.setString(2, oname2);
+			int a2=ps2.executeUpdate();
 
-			if (a1>0) {         //if (a1>0 && a2>0) {
+			if (a1>0 && a2>0) {   
 				con.commit();
 				HttpSession ohp=req.getSession();
 				ohp.setAttribute("oname", oname2);
