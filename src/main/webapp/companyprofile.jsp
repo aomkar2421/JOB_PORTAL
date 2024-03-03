@@ -55,40 +55,23 @@
 		String pass= (String) session.getAttribute("opass");
 		String city= (String) session.getAttribute("ocity");
 		String profile= (String) session.getAttribute("profile");
-		String industry="",website="",specialities="",empno="",about="",id="";
+		String industry = (String)session.getAttribute("industry");		
+		String specialities = (String)session.getAttribute("specialities");		
+		String website = (String)session.getAttribute("website");		
+		String empno = (String)session.getAttribute("empno");		
+		String about = (String)session.getAttribute("about");		
 
 		%>
 		
 		
 		<jsp:include page="profileheader.jsp"></jsp:include>
-		<jsp:include page="companymenubar.jsp"></jsp:include>
+		<jsp:include page="menubar.jsp"></jsp:include>
 		
 		
 		<!-- ============about section========= -->
 		<div class="row">
 			<div class="col-md-2">
 			</div>
-			
-			  <%
-					Connection con;
-					try {
-												
-						con=DriverManager.getConnection("jdbc:mysql://localhost:3306/jobportal", "root", "root");
-						PreparedStatement ptst=con.prepareStatement("select * from about_company where email=?");
-						ptst.setString(1, email);
-						ResultSet rs=ptst.executeQuery();
-						
-						while(rs.next()){
-							industry= rs.getString("industry");
-							website= rs.getString("website");
-							specialities= rs.getString("specialities");
-							empno= rs.getString("empno");
-							about= rs.getString("about");
-					}
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				%>	
 			
 			<div class="col-md-8">
 				<div class="row" style="border: 1px solid gray; border-radius: 3px;box-shadow: 2px 2px 8px black; ">

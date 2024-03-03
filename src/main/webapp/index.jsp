@@ -70,7 +70,7 @@
 					<div class="row">
 					
 						<%
-							String id="",job_profile="",company="",experiance="",salary="",description="";
+							String id="",jobprofile="",company="",experiance="",salary="",description="",skills="";
 							try{
 								Connection con=DBConnect.getConnect();
 								PreparedStatement ptst=con.prepareStatement("select * from jobs");
@@ -78,17 +78,19 @@
 								
 								while(rs.next()){
 									id=rs.getString("id");
-									job_profile=rs.getString("job_profile");
+									jobprofile=rs.getString("jobprofile");
 									company=rs.getString("company");
 									experiance=rs.getString("experiance");
 									salary=rs.getString("salary");
 									description=rs.getString("description");
+									skills=rs.getString("skills");
 									
 									%>
 										<div class="col-md-12 job-display">
-											<b><%=job_profile %></b>
+											<b><%=jobprofile %></b>
 											<div><b>Company</b> :-<%=company %></div>
 											<div><b>Salary</b> :-<%=salary %></div>
+											<div><b>Skills</b> :-<%=skills %></div>
 											<div><b>Description</b> :-<%=description %></div>
 											<a href="jobs-desc.jsp?jid=<%=id%>">See Full Details</a>
 										</div>

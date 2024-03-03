@@ -49,7 +49,6 @@ public class Login extends HttpServlet{
 				//code to be executed while creating this page
 				resp.sendRedirect("profile.jsp");
 
-
 				//code to be executed while creating profile
 
 				name3=rs.getString("name");

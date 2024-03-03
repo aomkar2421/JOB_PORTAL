@@ -52,7 +52,7 @@
 					<div class="row">
 					
 						<%
-							String jobid="",job_profile="",company="",experiance="",salary="",description="",openings="",location="",c_email="",contact_person="",contact_profile="",contact_phone="";                              
+							String jobid="",jobprofile="",company="",experiance="",salary="",description="",skills="",openings="",location="",cemail="",cperson="",cprofile="",cphone="";                              
 							jobid=request.getParameter("jid");
 							try{
 								Connection con=DBConnect.getConnect();
@@ -62,28 +62,27 @@
 								
 								while(rs.next()){
 									jobid=rs.getString("id");
-									job_profile=rs.getString("job_profile");
+									jobprofile=rs.getString("jobprofile");
 									company=rs.getString("company");
 									experiance=rs.getString("experiance");
 									salary=rs.getString("salary");
 									openings=rs.getString("openings");
 									location=rs.getString("location");
-									c_email=rs.getString("c_email");
-									contact_person=rs.getString("contact_person");
-									contact_profile=rs.getString("contact_profile");
-									contact_phone=rs.getString("contact_phone");
+									cemail=rs.getString("cemail");
+									cphone=rs.getString("cphone");
 									description=rs.getString("description");
+									skills=rs.getString("skills");
 									
 									%>
 										<div class="col-md-12 job-display">
-											<b><%=job_profile %></b>
+											<b><%=jobprofile %></b>
 											<div><span class="jt">Company</span> :-<%=company %></div>
 											<div><span class="jt">Salary</span> :-<%=salary %> <span class="jt">| Experiance</span> :-<%=experiance %> <span class="jt">| Openings</span> :-<%=openings %></div>
+											<div><span class="jt">Skills</span> :-<%=skills %></div>
 											<div><span class="jt">Location</span> :-<%=location %></div>
 											<br> <div>Contact <br>
-											<span class="jt">Company Email</span> :-<%=c_email %></div>
-											<div><span class="jt">Contact</span> :-<%=contact_person %> <span class="jt">| Profile</span> :-<%=contact_profile %></div>
-											<div><span class="jt">Phone No</span> :-<%=contact_phone %></div> <br>
+											<span class="jt">Company Email</span> :-<%=cemail %></div>
+											<div><span class="jt">Phone No</span> :-<%=cphone %></div> <br>
 											<div><span class="jt">Description</span> :-<%=description %></div>
 											<br>
 									<%

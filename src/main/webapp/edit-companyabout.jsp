@@ -55,10 +55,14 @@
 		String email= (String) session.getAttribute("oemail");
 		String pass= (String) session.getAttribute("opass");
 		String city= (String) session.getAttribute("ocity");
-		String profile= (String) session.getAttribute("profile");		
-		%>
+		String profile= (String) session.getAttribute("profile");
+		String industry = (String)session.getAttribute("industry");		
+		String specialities = (String)session.getAttribute("specialities");		
+		String website = (String)session.getAttribute("website");		
+		String empno = (String)session.getAttribute("empno");		
+		String about = (String)session.getAttribute("about");		
 
-		
+		%>		
 		
 		<jsp:include page="profileheader.jsp"></jsp:include>
 		<jsp:include page="companymenubar.jsp"></jsp:include>
@@ -78,13 +82,13 @@
 						<div class="col-md-8">
 							<form action="companyabout" method="post">
 								<h1 style="font-family: abcd" ><%=name %></h1> <br> <br>
-								<span class="ohed">Website</span> : <span class="osh"> <input type="text" placeholder="Enter Website" name="website1"> </span> <br>
-								<span class="ohed">Industry</span> : <span class="osh"> <input type="text" placeholder="Enter Industry" name="industry1"> </span> <br>
-								<span class="ohed">Company size</span> : <span class="osh"><input type="text" placeholder="Enter No Of Employees" name="empno1"></span> <br>
-								<span class="ohed">Specialties</span> : <span class="osh"> <input type="text" placeholder="Enter Specailities" name="speciaities1"> </span>
+								<span class="ohed">Website</span> : <span class="osh"> <input type="text" placeholder="Enter Website" name="website1" value="<%=website %>"> </span> <br>
+								<span class="ohed">Industry</span> : <span class="osh"> <input type="text" placeholder="Enter Industry" name="industry1" value="<%=industry %>"> </span> <br>
+								<span class="ohed">Company size</span> : <span class="osh"><input type="text" placeholder="Enter No Of Employees" name="empno1" value="<%=empno %>"></span> <br>
+								<span class="ohed">Specialties</span> : <span class="osh"> <input type="text" placeholder="Enter Specailities" name="specialities1" value="<%=specialities %>"> </span>
 								<div class="ohed" >About</div>
 								<div class="osh">
-									<textarea style="width: 90%" rows="3" name="cabout1"></textarea>
+									<textarea style="width: 90%" rows="3" name="about1" > <%=about %></textarea>
 								</div>
 								<input type="submit" class="btn btn-primary" value="Update Details">
 							</form>

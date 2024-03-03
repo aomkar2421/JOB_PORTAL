@@ -65,39 +65,31 @@ public class LoginCompany extends HttpServlet{
 				hp.setAttribute("profile", "c");
 
 
-//				//code to be executed while creating edit profile
-//				String title="", skills="";
-//				PreparedStatement ptst2=con.prepareStatement("select * from about_user where email=?");
-//				ptst2.setString(1, email3);
-//
-//				ResultSet rs2=ptst2.executeQuery();
-//				while (rs2.next()) {
-//					title=rs2.getString("title");
-//					skills=rs2.getString("skills");
-//
-//					hp.setAttribute("stitle", title);
-//					hp.setAttribute("sskills", skills);
-//				}
+				//				//code to be executed while creating edit profile
+				String industry="",website="",specialities="",empno="",about="",id="";
+
+				PreparedStatement ptst2=con.prepareStatement("select * from about_company where oemail=?");
+				ptst2.setString(1, email3);
+
+				ResultSet rs2=ptst2.executeQuery();
+
+				while(rs2.next()){
+					industry= rs2.getString("industry");
+					website= rs2.getString("website");
+					specialities= rs2.getString("specialities");
+					empno= rs2.getString("empno");
+					about= rs2.getString("about");
+				}
+				
+				hp.setAttribute("industry", industry);
+				hp.setAttribute("website", website);
+				hp.setAttribute("specialities", specialities);
+				hp.setAttribute("empno", empno);
+				hp.setAttribute("about", about);
 
 			} else {
 				con.rollback();
 				resp.sendRedirect("loginerror.jsp");
-
-				//				RequestDispatcher rd1=req.getRequestDispatcher("header.jsp");
-				//				rd1.include(req, resp);
-				//				
-				//				RequestDispatcher rd2=req.getRequestDispatcher("menubar.jsp");
-				//				rd2.include(req, resp);
-				//				
-				//				RequestDispatcher rd3=req.getRequestDispatcher("loginerror.jsp");
-				//				rd3.include(req, resp);
-				//				
-				//				RequestDispatcher rd4=req.getRequestDispatcher("logindiv.jsp");
-				//				rd4.include(req, resp);
-				//				
-				//				RequestDispatcher rd5=req.getRequestDispatcher("footer.jsp");
-				//				rd5.include(req, resp);
-
 			}
 
 		} catch (Exception e) {

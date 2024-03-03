@@ -8,7 +8,8 @@
     pageEncoding="ISO-8859-1"%>
     
     <%
-    	String email=(String) session.getAttribute("semail");
+	String email=(String) session.getAttribute("semail");
+	String company=(String) session.getAttribute("oname");
     %>
     
 <!DOCTYPE html>
@@ -27,14 +28,7 @@
 	
 		<div class="container-fluid">
 		
-			<%
-				if(email==null || email=="" || email.equals("")){
-				%> <jsp:include page="header.jsp"></jsp:include> <%	
-				}else{
-				%> <jsp:include page="profileheader.jsp"></jsp:include> <%	
-				}
-			%>
-		
+			<jsp:include page="profileheader.jsp"></jsp:include>
 			<jsp:include page="menubar.jsp"></jsp:include>
 				
 			
@@ -54,43 +48,36 @@
 					<div class="row">
 					
 						<%
-						String jid="", jobid="",jobprofile="",company="",experiance="",salary="",description="",openings="",skills="",location="",cemail="",cperson="",cprofile="",cphone="";                              
-
+						String jobprofile="",experiance="",salary="",description="",openings="",skills="",location="",cemail="",cperson="",cprofile="",cphone="";                              
+						int id ;
 						
 							try{
 								Connection con=DBConnect.getConnect();
-								PreparedStatement ptst=con.prepareStatement("select * from applied_jobs where email=?");
-								ptst.setString(1,email);
+								PreparedStatement ptst=con.prepareStatement("select * from jobs where company=?");
+								ptst.setString(1,company);
 								ResultSet rs=ptst.executeQuery();
 								
-								while(rs.next()){
-									jid=rs.getString("jid");
-									
-									PreparedStatement ptst2=con.prepareStatement("select * from jobs where id=?");
-									ptst2.setString(1,jid);
-									ResultSet rs2= ptst2.executeQuery();
-									while(rs2.next()){
-										jobprofile=rs2.getString("jobprofile");
-										company=rs2.getString("company");
-										experiance=rs2.getString("experiance");
-										salary=rs2.getString("salary");
-										description=rs2.getString("description");
-										skills=rs2.getString("skills");
+								while(rs.next()){	
+										id = rs.getInt("id");
+										jobprofile=rs.getString("jobprofile");
+										experiance=rs.getString("experiance");
+										location=rs.getString("location");
+										salary=rs.getString("salary");
+										description=rs.getString("description");
+										skills=rs.getString("skills");
 										
 										%>
 											<div class="col-md-12 job-display">
 												<b><%=jobprofile %></b>
 												<div><b>Company</b> :-<%=company %></div>
 												<div><b>Salary</b> :-<%=salary %></div>
+												<div><b>Location</b> :-<%=location %></div>
 												<div><b>Skills</b> :-<%=skills %></div>
 												<div><b>Description</b> :-<%=description %></div>
-												<div><a href="jobs-desc.jsp?jid=<%=jid%>">See Full Details</a></div>
+												<div><a href="jobs-desc.jsp?id=<%=id%>">See Full Details</a></div>
 											</div>
 										<%
-									}
-									
 								}
-								
 							}catch(Exception e){
 								e.printStackTrace();
 							}

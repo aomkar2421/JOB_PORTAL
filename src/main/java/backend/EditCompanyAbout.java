@@ -31,9 +31,9 @@ public class EditCompanyAbout extends HttpServlet{
 
 		String industry2 = req.getParameter("industry1");
 		String website2 = req.getParameter("website1");
-		String speciaities2 = req.getParameter("speciaities1");
+		String specialities2 = req.getParameter("specialities1");
 		String empno2 = req.getParameter("empno1");
-		String cabout2 = req.getParameter("cabout1");
+		String about2 = req.getParameter("about1");
 
 
 		Connection con=null;
@@ -45,9 +45,9 @@ public class EditCompanyAbout extends HttpServlet{
 			PreparedStatement ps2=con.prepareStatement("update about_company set industry=?, website=?, specialities=?, empno=?, about=? where oemail=?");
 			ps2.setString(1, industry2);
 			ps2.setString(2, website2);
-			ps2.setString(3, speciaities2);
+			ps2.setString(3, specialities2);
 			ps2.setString(4, empno2);
-			ps2.setString(5, cabout2);
+			ps2.setString(5, about2);
 			ps2.setString(6, email);
 			int i2=ps2.executeUpdate();
 			System.out.println("ABOUT DATA");
@@ -56,9 +56,9 @@ public class EditCompanyAbout extends HttpServlet{
 				//Not necessary for this part but required for further part session creates instance of parameters which can be used on other pages
 				session.setAttribute("industry", industry2);
 				session.setAttribute("website", website2);
-				session.setAttribute("speciaities", speciaities2);
+				session.setAttribute("specialities", specialities2);
 				session.setAttribute("empno", empno2);
-				session.setAttribute("cabout", cabout2);
+				session.setAttribute("about", about2);
 
 				resp.sendRedirect("companyprofile.jsp");
 			} else {
