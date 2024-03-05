@@ -19,12 +19,25 @@
 		<link rel="icon" href="images/ao.png">
 		<title>Job Portal</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/list.css">
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 		<script type="text/javascript">
+		
 		</script>
+		
+		<style type="text/css">
+			.col-md-8{
+			 background: rgba( 114, 67, 208, 0.05 );
+			box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+			backdrop-filter: blur( 5px );
+			-webkit-backdrop-filter: blur( 5px );
+			border-radius: 10px;
+			border: 1px solid rgba( 255, 255, 255, 0.18 );
+			}
+		</style>
+		
 	</head>
 	<body>
 	
@@ -40,6 +53,7 @@
 				
 			<div class="row">
 				<div class="col-md-2">
+					
 				</div>	
 				
 				<div class="col-md-8" style="text-align: center;box-shadow: 0 0 3px #F00, 0 0 5px #00F;margin-top: 20px;">
@@ -55,18 +69,27 @@
 			</div>	
 			
 			
-			<div class="row">
+			<div class="row" style="list-style: none;" >
 				<div class="col-md-2 jobs" style="list-style: none;">
-					<ul>
-						<li><a href="">Accenture</a></li>
-						<li><a href="">Accenture</a></li>
-						<li><a href="">Accenture</a></li>
-						<li><a href="">Accenture</a></li>
-						<li><a href="">Accenture</a></li>
+				<h4>Categories</h4>
+					<ul class="ull">
+						<li class="lii">Remote</li>
+						<li class="lii">MNC</li>
+						<li class="lii">Marketing</li>
+						<li class="lii">Supply Chain</li>
+						<li class="lii">Banking</li>
+						<li class="lii">Startup</li>
+						<li class="lii">Analytics</li>
+						<li class="lii">HR</li>
+						<li class="lii">Sales</li>
+						<li class="lii">Data Science</li>
+						<li class="lii">Cyber Security</li>
+						<li class="lii">Blockcahin</li>
+						<li class="lii">Information</li>
 					</ul>
 				</div>
 				
-				<div class="col-md-8" style="background-color: #f3f1f48f; margin-top: 10px">
+				<div class="col-md-8" style="margin-top: 30px; padding-top: 30px">
 					<div class="row">
 					
 						<%
@@ -104,13 +127,22 @@
 					</div>
 				</div>
 				
-				<div class="col-md-2" style="list-style: none;">
-					<ul>
-						<li><a href="">Accenture</a></li>
-						<li><a href="">Accenture</a></li>
-						<li><a href="">Accenture</a></li>
-						<li><a href="">Accenture</a></li>
-						<li><a href="">Accenture</a></li>
+				<div class="col-md-2 jobs" style="list-style: none;">
+				<h4>Categories</h4>
+					<ul class="ull">
+						<li class="lii">Remote</li>
+						<li class="lii">MNC</li>
+						<li class="lii">Marketing</li>
+						<li class="lii">Supply Chain</li>
+						<li class="lii">Banking</li>
+						<li class="lii">Startup</li>
+						<li class="lii">Analytics</li>
+						<li class="lii">HR</li>
+						<li class="lii">Sales</li>
+						<li class="lii">Data Science</li>
+						<li class="lii">Cyber Security</li>
+						<li class="lii">Blockcahin</li>
+						<li class="lii">Information</li>
 					</ul>
 				</div>
 			</div>

@@ -5,6 +5,15 @@
     src: url("Fonts/BlackAcute.ttf");
 }
 
+@font-face {
+    font-family: omk;
+    src: url("/src/main/webapp/Fonts/Diavlo_BOLD_II.otf");
+}
+
+*{
+	font-family: omk;
+}
+
 html{
 	padding: 0px;
 	margin: 0px;
@@ -75,5 +84,35 @@ html{
 }
 
 
+.col-md-8{
+	 background: rgba( 255, 255, 255, 0.25 );
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	backdrop-filter: blur( 4px );
+	-webkit-backdrop-filter: blur( 4px );
+	border-radius: 10px;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.ull{
+	 list-style: none;
+	 margin-left: -50px;
+	 width: 200px;
+}
 
 
+.lii{
+	height: 45px;
+  text-align: center;
+  padding-top: 10px;
+  width: 150px;
+  background-color: #c5e1d9;
+  border-radius: 3px;
+  margin-top: 20px;
+  background: rgba( 255, 255, 255, 0.25 );
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	backdrop-filter: blur( 4px );
+	-webkit-backdrop-filter: blur( 4px );
+	border-radius: 10px;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+ }
+ 

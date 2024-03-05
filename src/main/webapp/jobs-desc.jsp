@@ -39,13 +39,6 @@
 			
 			<div class="row">
 				<div class="col-md-2 jobs" style="list-style: none;">
-					<ul>
-						<li><a href="">Accenture</a></li>
-						<li><a href="">Accenture</a></li>
-						<li><a href="">Accenture</a></li>
-						<li><a href="">Accenture</a></li>
-						<li><a href="">Accenture</a></li>
-					</ul>
 				</div>
 				
 				<div class="col-md-8" style="background-color: #f3f1f48f; margin-top: 10px">
@@ -137,13 +130,6 @@
 				</div>
 				
 				<div class="col-md-2" style="list-style: none;">
-					<ul>
-						<li><a href="">Accenture</a></li>
-						<li><a href="">Accenture</a></li>
-						<li><a href="">Accenture</a></li>
-						<li><a href="">Accenture</a></li>
-						<li><a href="">Accenture</a></li>
-					</ul>
 				</div>
 			</div>
 			

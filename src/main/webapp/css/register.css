@@ -1,5 +1,12 @@
 @charset "ISO-8859-1";
+@font-face {
+    font-family: omk;
+    src: url("Fonts/LEMONMILK-Light.otf");
+}
 
+*{
+	font-family: omk;
+}
 .reg{
 	background-color: rgb(204, 255, 255);
     text-align: center;

@@ -23,7 +23,7 @@
 			<div class="col-md-6 reg">
 				<form action="logincompany" method="post">
 						<br> <br>
-					<h2>Login COMPANY</h2> <br> <br>
+					<h2>LOGIN ORGANIZATION</h2> <br> <br>
 					<input type="text" placeholder="Enter Organization Email..." name="oemail1" class="reg-tf"> <br> <br>
 					<input type="password" placeholder="Enter Organization Password..." name="opass1" class="reg-tf"> <br> <br>
 					Remember Me <input type="checkbox" name="Remember" value="Remember1"><br> <br>

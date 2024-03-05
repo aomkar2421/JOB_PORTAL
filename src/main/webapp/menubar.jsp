@@ -54,6 +54,7 @@
 								<div class="col-md-6">
 									<ul class="nav-bar" >
 										<li><a href="postjob.jsp">Post Jobs</a></li>
+										<li><a href="applications.jsp">Applications</a></li>
 										<li><a href="alljobs.jsp">All Jobs</a></li>
 										<li><a href="companyprofile.jsp">Profile</a></li>
 									</ul>

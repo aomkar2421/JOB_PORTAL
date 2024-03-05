@@ -9,6 +9,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/register.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/fonts.css">
 </head>
 <body>
 	   <div class="row">

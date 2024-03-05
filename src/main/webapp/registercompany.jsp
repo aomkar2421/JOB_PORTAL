@@ -34,7 +34,7 @@
 			<div class="col-md-6 reg">
 				<form method="post" name="regorgform" onsubmit="return validation()">  <!-- <form action="reg" method="post"> -->
 					<br> <br>
-					<h2>Register For Organization</h2> <br><br> 
+					<h2>Register Organization</h2> <br><br> 
 					<input type="text" placeholder="Enter Organization Name..." name="oname1" class="reg-tf"> <br> <br>
 					<input type="text" placeholder="Enter Organization Email..." name="oemail1" class="reg-tf"> <br> <br>
 					<input type="password" placeholder="Enter Password..." name="opass1" class="reg-tf"> <br> <br>
