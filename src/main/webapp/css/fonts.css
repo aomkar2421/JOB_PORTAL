@@ -1,0 +1,32 @@
+@charset "ISO-8859-1";
+
+
+@font-face {
+    font-family:abcd ;
+    src: url("/src/main/webapp/Fonts/Diavlo_BOLD_II.otf");
+}
+
+@font-face {
+    font-family:def ;
+    src: url("/src/main/webapp/Fonts/Divalo_BOLD.otf");
+}
+
+@font-face {
+    font-family:def ;
+    src: url("/src/main/webapp/Fonts/Armstrong.otf");
+}
+
+.ohed{
+	font-family:lmn;
+	font-weight: 800;
+	font-size: 20px;
+	margin-bottom: 4px;
+}
+
+.osh{
+	font-family:lmn;
+	font-weight: 400;
+	font-size: 18px;
+	margin-bottom: 4px;
+	
+}

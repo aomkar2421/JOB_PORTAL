@@ -110,23 +110,42 @@
 					
 					<div style="font-family: abcd; margin: 5px;"><h2>RECENT JOBS</h2></div>
 					
-					<div class="jobcont" style="border: 2px solid black; width: 100%; margin: 15px; padding: 10px; ">
-						<h2 style="font-family: lmn">Application Developer</h2>
-						<span class="ohed">Location</span> : <span class="osh">Pune, Maharashtra</span> <br>
-						<span class="ohed">Job Type</span> : <span class="osh">Hybrid</span> <br>
-						<span class="ohed">Vacancy</span> : <span class="osh">28</span> <br>
-						<span class="ohed">Experiance</span> : <span class="osh">0-2 Years</span> <br>
-						<span class="ohed">Salary</span> : <span class="osh">5-6 LPA</span> <br>
+					<div class="jobcont" style="width: 100%; margin: 15px; padding: 10px; ">
+						<%
+						String jobprofile="",experiance="",salary="",description="",openings="",skills="",location="",cemail="",cperson="",cprofile="",cphone="";                              
+						int id ;
 						
-					</div>
-					<div class="jobcont" style="border: 2px solid black; width: 100%; margin: 15px; padding: 10px; ">
-						<h2 style="font-family: lmn">Application Developer</h2>
-						<span class="ohed">Location</span> : <span class="osh">Pune, Maharashtra</span> <br>
-						<span class="ohed">Job Type</span> : <span class="osh">Hybrid</span> <br>
-						<span class="ohed">Vacancy</span> : <span class="osh">28</span> <br>
-						<span class="ohed">Experiance</span> : <span class="osh">0-2 Years</span> <br>
-						<span class="ohed">Salary</span> : <span class="osh">5-6 LPA</span> <br>
+							try{
+								Connection con=DBConnect.getConnect();
+								PreparedStatement ptst=con.prepareStatement("select * from jobs where company=?");
+								ptst.setString(1, name);
+								ResultSet rs=ptst.executeQuery();
+								
+								while(rs.next()){	
+										id = rs.getInt("id");
+										jobprofile=rs.getString("jobprofile");
+										experiance=rs.getString("experiance");
+										location=rs.getString("location");
+										salary=rs.getString("salary");
+										description=rs.getString("description");
+										skills=rs.getString("skills");
+										
+										%>
+											<div class="col-md-12 job-display">
+												<h3><b><%=jobprofile %></b></h3>
+												<div><b>Salary</b> :-<%=salary %></div>
+												<div><b>Location</b> :-<%=location %></div>
+												<div><b>Skills</b> :-<%=skills %></div>
+												<div><b>Description</b> :-<%=description %></div>
+												<div><a href="jobs-desc.jsp?id=<%=id%>">See Full Details</a></div>
+											</div>
+										<%
+								}
+							}catch(Exception e){
+								e.printStackTrace();
+							}
 						
+						%>												
 					</div>
 	
 				</div>

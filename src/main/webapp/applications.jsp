@@ -46,35 +46,32 @@
 				
 				<div class="col-md-8" style="background-color: #f3f1f48f; margin-top: 10px">
 					<div class="row">
-					
+						<h2 style="margin: auto; margin-bottom: 25px;">Applications Received</h2>
 						<%
-						String jobprofile="",experiance="",salary="",description="",openings="",skills="",location="",cemail="",cperson="",cprofile="",cphone="";                              
-						int id ;
+						String jobprofile="",uname="",uemail="",description="",openings="",skills="",location="",cemail="",cperson="",cprofile="",cphone="";                              
+						int uid ;
 						
 							try{
 								Connection con=DBConnect.getConnect();
-								PreparedStatement ptst=con.prepareStatement("select * from jobs where company=?");
+								PreparedStatement ptst=con.prepareStatement("select * from applied_jobs a inner join jobs j inner join about_user u inner join register r on a.jid=j.id and u.email = a.email and u.email= r.email where  company = ?");
 								ptst.setString(1,company);
 								ResultSet rs=ptst.executeQuery();
 								
 								while(rs.next()){	
-										id = rs.getInt("id");
-										jobprofile=rs.getString("jobprofile");
-										experiance=rs.getString("experiance");
-										location=rs.getString("location");
-										salary=rs.getString("salary");
-										description=rs.getString("description");
-										skills=rs.getString("skills");
+										uid = rs.getInt("u.id");
+										uname=rs.getString("r.name");
+										uemail=rs.getString("u.email");
+										jobprofile=rs.getString("j.jobprofile");
+										skills=rs.getString("u.skills");
 										
 										%>
 											<div class="col-md-12 job-display">
 												<b><%=jobprofile %></b>
-												<div><b>Company</b> :-<%=company %></div>
-												<div><b>Salary</b> :-<%=salary %></div>
-												<div><b>Location</b> :-<%=location %></div>
+												<b><%=uid %></b>
+												<div><b>Applicant's Name</b> :-<%=uname %></div>
+												<div><b>Applicant's Email</b> :-<%=uemail %></div>
 												<div><b>Skills</b> :-<%=skills %></div>
-												<div><b>Description</b> :-<%=description %></div>
-												<div><a href="companyjobdescription.jsp?jid=<%=id%>">See Full Details</a></div>
+												<div><a href="applicantdesc.jsp?uid=<%=uid%>">See Full Details</a></div>
 											</div>
 										<%
 								}
